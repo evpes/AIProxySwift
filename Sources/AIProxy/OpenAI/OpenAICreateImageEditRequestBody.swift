@@ -192,6 +192,7 @@ extension OpenAICreateImageEditRequestBody {
     nonisolated public enum Model: String, Encodable, Sendable {
         case dallE2 = "dall-e-2"
         case gptImage1 = "gpt-image-1"
+        case gptImage15 = "gpt-image-1.5"
         case gptImage1Mini = "gpt-image-1-mini"
     }
 
