@@ -49,6 +49,7 @@ nonisolated public struct OpenAICreateImageRequestBody: Encodable, Sendable {
     /// The quality of the image that will be generated.
     /// - `auto` (default value) will automatically select the best quality for the given model.
     /// - `high`, `medium` and `low` are supported for gpt-image-1.
+    /// - `xhigh` and `max` are supported for gpt-image-2.5-flare and gpt-image-2.5-sunburst.
     /// - `hd` and `standard` are supported for dall-e-3.
     /// - `standard` is the only option for dall-e-2.
     public let quality: Quality?
@@ -137,6 +138,8 @@ extension OpenAICreateImageRequestBody {
         case gptImage1 = "gpt-image-1"
         case gptImage1_5 = "gpt-image-1.5"
         case gptImage2 = "gpt-image-2"
+        case gptImage2_5Flare = "gpt-image-2.5-flare"
+        case gptImage2_5Sunburst = "gpt-image-2.5-sunburst"
     }
 
     nonisolated public enum Moderation: String, Encodable, Sendable {
@@ -156,6 +159,9 @@ extension OpenAICreateImageRequestBody {
 
         /// Supported for gpt-image-1
         case high, medium, low
+
+        /// Supported for gpt-image-2.5-flare and gpt-image-2.5-sunburst
+        case xhigh, max
 
         /// Supported for dall-e-3.
         case hd, standard
